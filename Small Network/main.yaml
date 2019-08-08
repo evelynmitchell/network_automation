@@ -1,0 +1,9 @@
+---
+routers:
+ - hostname: R1
+   interfaces:
+        - { name: 0/0, IP: 10.0.0.1 255.255.255.0 }            
+
+ - hostname: R2
+   interfaces:
+        - { name: 0/0, IP: 10.0.0.2 255.255.255.0 }

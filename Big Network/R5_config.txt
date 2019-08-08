@@ -1,0 +1,22 @@
+hostname R5
+
+interface loopback 0
+ ip address 5.5.5.5 255.255.255.255
+ no shutdown
+
+interface FastEthernet0/0
+ ip address 10.0.0.18 255.255.255.252
+ no shutdown
+
+interface FastEthernet1/0
+ ip address 10.0.0.30 255.255.255.252
+ no shutdown
+
+interface FastEthernet1/1
+ ip address 10.0.0.245 255.255.255.252
+ no shutdown
+
+router ospf 1
+network 5.5.5.5 0.0.0.0 area 1
+network 10.0.0.16 0.0.0.3 area 1
+network 10.0.0.28 0.0.0.3 area 1

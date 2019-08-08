@@ -1,0 +1,22 @@
+hostname R6
+
+interface loopback 0
+ ip address 6.6.6.6 255.255.255.255
+ no shutdown
+
+interface FastEthernet0/0
+ ip address 10.0.0.22 255.255.255.252
+ no shutdown
+
+interface FastEthernet1/0
+ ip address 10.0.0.26 255.255.255.252
+ no shutdown
+
+interface FastEthernet1/1
+ ip address 10.0.0.241 255.255.255.252
+ no shutdown
+
+router ospf 1
+network 6.6.6.6 0.0.0.0 area 1
+network 10.0.0.20 0.0.0.3 area 1
+network 10.0.0.24 0.0.0.3 area 1

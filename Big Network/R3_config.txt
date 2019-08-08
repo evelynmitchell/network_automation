@@ -1,0 +1,28 @@
+hostname R3
+
+interface loopback 0
+ ip address 3.3.3.3 255.255.255.255
+ no shutdown
+
+interface FastEthernet0/0
+ ip address 10.0.0.17 255.255.255.252
+ no shutdown
+
+interface FastEthernet0/1
+ ip address 10.0.0.2 255.255.255.252
+ no shutdown
+
+interface FastEthernet1/0
+ ip address 10.0.0.25 255.255.255.252
+ no shutdown
+
+interface FastEthernet1/1
+ ip address 10.0.0.14 255.255.255.252
+ no shutdown
+
+router ospf 1
+network 3.3.3.3 0.0.0.0 area 1
+network 10.0.0.0 0.0.0.3 area 1
+network 10.0.0.12 0.0.0.3 area 1
+network 10.0.0.16 0.0.0.3 area 1
+network 10.0.0.24 0.0.0.3 area 1

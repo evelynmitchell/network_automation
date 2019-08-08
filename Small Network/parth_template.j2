@@ -1,0 +1,9 @@
+hostname {{ item.hostname }}
+
+{% for int in item.interfaces -%}
+
+interface FastEthernet{{ int.name }}
+ ip address {{ int.IP }}
+ no shutdown
+
+{% endfor %}
